@@ -6,3 +6,6 @@ const rootReducer = combineReducers({
 });
 
 export default rootReducer;
+
+// This is required to allow redux to work with TypeScript - for the useSelector hook
+export type RootState = ReturnType<typeof rootReducer>;
