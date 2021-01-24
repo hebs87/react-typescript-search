@@ -1,11 +1,11 @@
 import React, {FC, ReactElement, useState} from "react";
-import {useSelector} from "react-redux";
+import {useTypedSelector} from "../hooks/useTypedSelector";
 import {useActions} from "../hooks/useActions";
 
 const RepositoriesList: FC = (): ReactElement => {
   const [term, setTerm] = useState('');
   const {searchRepositories} = useActions();
-  const {loading, error, data} = useSelector((state: any) => state.repositories)
+  const {loading, error, data} = useTypedSelector((state) => state.repositories)
 
   const onInputChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
     setTerm(event.target.value);
