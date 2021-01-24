@@ -1,5 +1,6 @@
 import {Action} from "../actions";
 import {ActionType} from "../action-types";
+import rootReducer from "./index";
 
 interface RepositoriesState {
   loading: boolean;
