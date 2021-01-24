@@ -1,6 +1,7 @@
 import React, {FC, ReactElement, useState} from "react";
 import {useTypedSelector} from "../hooks/useTypedSelector";
 import {useActions} from "../hooks/useActions";
+import Results from "./Results";
 
 const RepositoriesList: FC = (): ReactElement => {
   const [term, setTerm] = useState('');
@@ -22,6 +23,13 @@ const RepositoriesList: FC = (): ReactElement => {
         <input type="text" onChange={onInputChange} value={term}/>
         <button>Search</button>
       </form>
+      <div style={{marginTop: 25}}>
+        <Results
+          loading={loading}
+          error={error}
+          data={data}
+        />
+      </div>
     </div>
   )
 }
